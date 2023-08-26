@@ -1,0 +1,43 @@
+openapi: 3.0.3
+info:
+  title: DSM Aula api
+  description: API da disciplina lab web
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: moises.souza6@fatec.sp.gov.br
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/license/LICENSE-
+  version: 1.0.0
+externalDocs:
+  url: http://swagger.io
+  description: Additional Docs & Infos
+servers:
+  - url: https://fatecfranca.com.br/aula
+  - url: https://fatecfranca-stage.com.br/aula
+tags:
+  - name: food
+    description: Management food operations
+    externalDocs:
+      url: https://swagger.io
+      description: Additional Infos
+
+paths:
+  /foods: 
+    post:
+      tags:
+        - food
+      summary: Create a new food
+      description: Create a new food to menu
+      operationId: food
+      requestBody:
+        description: Create a new food
+        content:
+          application/json:
+            schema: 
+              type: object
+              properties: 
+                name:
+                  type: string
+                  description: Name of food
+                  example: Coxinha do empresario
