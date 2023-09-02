@@ -35,7 +35,7 @@ paths:
         content:
           application/json:
             schema: 
-              $ref: "#//components/schemas/food"
+              $ref: "#/components/schemas/food"
         required: true
       responses:
         '201':
@@ -131,56 +131,56 @@ components:
 
     FoodResponse:   
       type: object
-                properties: 
-                  uuid:
-                    type: string
-                    format: uuid
-                    description: UUID food created
-                  name:
-                    type: string
-                    description: Name of food
-                    example: Coxinha do empresario
-                  type: 
-                    type: string
-                    description: Type of food
-                    example: COMIDA
-                    enum:
-                      - COMIDA
-                      - BEBIDA
-                      - SOBREMESA
-                  value: 
-                    type: object
-                    properties:
-                      promotional: 
-                        type: number
-                        format: decimal
-                        example: 12.99
-                        minimum: 0.00
-                        maximum: 999.99
-                      default:
-                        type: number
-                        format: decimal
-                        example: 15.00
-                  specifications:
-                    type: array
-                    items:
-                      type: object
-                      properties:
-                        name:
-                          type: string
-                          maxLength: 15
-                          example: peso
-                        value:
-                          type: string
-                          maxLength: 20
-                          example: 10 kg
-                  vigency:
-                    type: object 
-                    description: Range date time to show food
-                    properties:
-                      initial: 
-                        type: string
-                        format: date-time
-                      final: 
-                        type: string
-                        format: date-time  
+      properties: 
+          uuid:
+            type: string
+            format: uuid
+            description: UUID food created
+          name:
+            type: string
+            description: Name of food
+            example: Coxinha do empresario
+          type: 
+            type: string
+            description: Type of food
+            example: COMIDA
+            enum:
+              - COMIDA
+              - BEBIDA
+              - SOBREMESA
+          value: 
+            type: object
+            properties:
+              promotional: 
+                type: number
+                format: decimal
+                example: 12.99
+                minimum: 0.00
+                maximum: 999.99
+              default:
+                type: number
+                format: decimal
+                example: 15.00
+          specifications:
+            type: array
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                  maxLength: 15
+                  example: peso
+                value:
+                  type: string
+                  maxLength: 20
+                  example: 10 kg
+          vigency:
+            type: object 
+            description: Range date time to show food
+            properties:
+              initial: 
+                type: string
+                format: date-time
+              final: 
+                type: string
+                format: date-time  
