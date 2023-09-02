@@ -35,7 +35,7 @@ paths:
         content:
           application/json:
             schema: 
-              $ref: "#/components/schemas/food"
+              $ref: "#/components/schemas/Food"
         required: true
       responses:
         '201':
@@ -69,11 +69,22 @@ paths:
                         description:
                           type: string
                           example: Field values. promotional in body is missing
-                        
-                
 
-
-
+    get:
+      summary: Get a list of foods
+      parameters:
+        - in: query
+          name: type
+          description: Type of food
+          schema: 
+            type: string
+      responses: 
+        '200':
+          description: List of food       
+          content:
+            application/json:
+              schema: 
+                $ref: "#/components/schemas/FoodResponse" 
 
 components:
   schemas:
